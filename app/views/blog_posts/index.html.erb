@@ -1,0 +1,12 @@
+<h1>My Blog</h1>
+<% if @blog_posts.empty? %>
+  <p>There are no blog posts yet.</p>
+<% else %>
+  <h2>Blog entries:</h2>
+  <% @blog_posts.each do |post|%>
+    <div>
+      <h2><%= link_to post.title, post %></h2>
+      <p><%= post.body %></p>
+    </div>
+  <%end%>
+<%end%>
